@@ -3,41 +3,43 @@ import { ListaProductos } from './ListaProductos';
 import { AgregarProducto } from './AgregarProducto';
 import { Producto } from './Producto';
 import { connect } from "react-redux";
-import {  agregarNuevoProducto, eliminarProducto, listarProductosAsync } from "../../redux/reducers/productos/productos.acciones"
-import { EstadoProducto } from '../../redux/reducers/productos/EstadoProducto';
+import { agregarNuevoProducto, eliminarProducto, listarProductosAsync } from "../../redux/reducers/productos/productos.acciones"
+import { PaginadorProductos } from './PaginadorProductos';
+import { EstadoGeneral } from '../../redux/reducers/EstadoGeneral';
 
 
 
 interface Props {
     productos: Array<Producto>,
-    listarProductos: () => void
+    listarProductos: (numeroPagina: number) => void
     agregarNuevoProducto: (productos: Producto) => void,
-    eliminarProducto: (productos: Producto) => void
+    eliminarProducto: (productos: Producto) => void,
+    cantidadTotalProducto: number
 }
 
 class ContenedorProductos extends React.Component<Props, any> {
 
 
     componentDidMount() {
-       this.props.listarProductos();
+        this.props.listarProductos(1);
     }
 
     render() {
 
-        const { productos } = this.props;
+        const { productos, cantidadTotalProducto, listarProductos } = this.props;
 
         return (
             <React.Fragment>
-                <ListaProductos productos={productos} onClickEliminarProducto={this.props.eliminarProducto}></ListaProductos>
-                <AgregarProducto onClickAgregarProducto={this.props.agregarNuevoProducto}></AgregarProducto>
+                <ListaProductos productos={productos} onClickEliminarProducto={this.props.eliminarProducto} />
+                <AgregarProducto onClickAgregarProducto={this.props.agregarNuevoProducto} />
+                <PaginadorProductos cantidadTotalProductos={cantidadTotalProducto} onClickCambiarPagina={listarProductos} />
             </React.Fragment>
         );
     }
 }
 
-const mapStateToProps = (state: EstadoProducto) => {
-    const { productos } = state;
-    return productos;
+const mapStateToProps = (state: EstadoGeneral) => {
+    return state.productos;
 };
 
 export default connect(

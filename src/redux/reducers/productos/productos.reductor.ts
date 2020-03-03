@@ -3,7 +3,8 @@ import { Producto } from "../../../componentes/productos/Producto";
 import { EstadoProducto } from "./EstadoProducto";
 
 const initialState: EstadoProducto = {
-  productos: Array<Producto>() 
+  productos: Array<Producto>(),
+  cantidadTotalProducto: 0
 };
 
 export default function (state = initialState, action: TiposAccionesProducto): EstadoProducto {
@@ -13,6 +14,7 @@ export default function (state = initialState, action: TiposAccionesProducto): E
       return {
         ...state,
         productos: productos,
+        cantidadTotalProducto: action.cantidadTotalProducto
       };
     }
     case AGREGAR_PRODUCTO: {

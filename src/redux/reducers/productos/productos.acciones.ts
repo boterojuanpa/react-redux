@@ -2,10 +2,11 @@ import { LISTAR_PRODUCTOS, AGREGAR_PRODUCTO, ELIMINAR_PRODUCTO, TiposAccionesPro
 import { Producto } from "../../../componentes/productos/Producto";
 import AgenteProductos from "../../../componentes/productos/AgenteProductos";
 
-export function listarProductos(productos: Array<Producto>): TiposAccionesProducto {
+export function listarProductos(productos: Array<Producto>, cantidadTotalProducto: number): TiposAccionesProducto {
   return {
     type: LISTAR_PRODUCTOS,
-    payload: productos
+    payload: productos,
+    cantidadTotalProducto: cantidadTotalProducto
   };
 }
 
@@ -25,10 +26,10 @@ export function eliminarProducto(producto: Producto): TiposAccionesProducto {
   }
 };
 
-export function listarProductosAsync() {
+export function listarProductosAsync(numeroPagina: number) {
   return function (dispacth: any) {
-    AgenteProductos.Articles.all(2).then((datos: any) =>
-      dispacth(listarProductos(datos.articles))
+    AgenteProductos.Articles.all(numeroPagina).then((datos: any) =>
+      dispacth(listarProductos(datos.articles, datos.articlesCount))
     );
   }
 

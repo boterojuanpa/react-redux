@@ -12,6 +12,7 @@ function App() {
   return (
     <React.Fragment>
         <Header/>
+        <hr/>
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/productos" component={ContenedorProductos} />

@@ -8,6 +8,7 @@ export const ELIMINAR_PRODUCTO = "ELIMINAR_PRODUCTO";
 interface AccionListarProductos {
   type: typeof LISTAR_PRODUCTOS
   payload: Producto[]
+  cantidadTotalProducto: number
 }
 interface AccionAgregarProducto {
   type: typeof AGREGAR_PRODUCTO
