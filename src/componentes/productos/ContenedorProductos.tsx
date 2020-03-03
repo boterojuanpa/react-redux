@@ -30,10 +30,10 @@ class ContenedorProductos extends React.Component<Props, any> {
         const { productos } = this.props;
 
         return (
-            <div>
+            <React.Fragment>
                 <ListaProductos productos={productos} onClickEliminarProducto={this.props.eliminarProducto}></ListaProductos>
                 <AgregarProducto onClickAgregarProducto={this.props.agregarNuevoProducto}></AgregarProducto>
-            </div>
+            </React.Fragment>
         );
     }
 }

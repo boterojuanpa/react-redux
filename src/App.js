@@ -10,14 +10,13 @@ import ContenedorProductos from './componentes/productos/ContenedorProductos';
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
         <Header/>
         <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/productos" component={ContenedorProductos} />
           </Switch>
-
-    </div>
+    </React.Fragment>
   );
 }
 
