@@ -16,15 +16,17 @@ export class ListaProductos extends React.Component<Props, any> {
         return (
             <table>
                 <thead>
-                    <td>
-                        <b>Título</b>
-                    </td>
-                    <td>
-                        <b>Fecha creación</b>
-                    </td>
-                    <td>
-                        <b>Eliminar</b>
-                    </td>
+                    <tr>
+                        <td>
+                            <b>Título</b>
+                        </td>
+                        <td>
+                            <b>Fecha creación</b>
+                        </td>
+                        <td>
+                            <b>Eliminar</b>
+                        </td>
+                    </tr>
                 </thead>
                 <tbody>
                     {productos.map((producto: Producto) => {
