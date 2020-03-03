@@ -1,4 +1,4 @@
-import { Producto } from "../../../componentes/productos/Producto";
+import { Producto } from "../../componentes/productos/Producto";
 
 export const LISTAR_PRODUCTOS = "LISTAR_PRODUCTOS";
 export const AGREGAR_PRODUCTO = "AGREGAR_PRODUCTO";

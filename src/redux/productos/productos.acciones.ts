@@ -1,6 +1,6 @@
 import { LISTAR_PRODUCTOS, AGREGAR_PRODUCTO, ELIMINAR_PRODUCTO, TiposAccionesProducto } from "./productos.tipos-acciones";
-import { Producto } from "../../../componentes/productos/Producto";
-import AgenteProductos from "../../../componentes/productos/AgenteProductos";
+import { Producto } from "../../componentes/productos/Producto";
+import AgenteProductos from "../../componentes/productos/AgenteProductos";
 
 export function listarProductos(productos: Array<Producto>, cantidadTotalProducto: number): TiposAccionesProducto {
   return {

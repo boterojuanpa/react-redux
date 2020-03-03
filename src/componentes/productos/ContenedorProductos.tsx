@@ -3,9 +3,9 @@ import { ListaProductos } from './ListaProductos';
 import { AgregarProducto } from './AgregarProducto';
 import { Producto } from './Producto';
 import { connect } from "react-redux";
-import { agregarNuevoProducto, eliminarProducto, listarProductosAsync } from "../../redux/reducers/productos/productos.acciones"
+import { agregarNuevoProducto, eliminarProducto, listarProductosAsync } from "../../redux/productos/productos.acciones"
 import { PaginadorProductos } from './PaginadorProductos';
-import { EstadoGeneral } from '../../redux/reducers/EstadoGeneral';
+import { EstadoGeneral } from '../../redux/EstadoGeneral';
 
 
 
