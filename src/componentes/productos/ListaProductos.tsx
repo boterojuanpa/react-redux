@@ -3,7 +3,7 @@ import { Producto } from './Producto';
 import { EliminarProducto } from "./EliminarProducto"
 
 export interface Props {
-    productos: [],
+    productos: Array<Producto>,
     onClickEliminarProducto: (productos: Producto) => void
 }
 

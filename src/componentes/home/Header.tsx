@@ -4,22 +4,22 @@ import { NavBar } from './NavBar';
 
 import './Header.css';
 
-class Header extends React.Component{
+class Header extends React.Component {
 
-    render(){
+    render() {
 
-        return(
+        return (
             <div>
-                <div className = "header" >
+                <div className="header" >
                     <span>Ceiba</span>
                 </div>
-                <div className = "nav-bar-header">
+                <div className="nav-bar-header">
                     <NavBar></NavBar>
                 </div>
-                
-                
+
+
             </div>
-            
+
         );
     }
 }

@@ -5,17 +5,18 @@ import { AgregarProducto } from './AgregarProducto';
 import { Producto } from './Producto';
 import { connect } from "react-redux";
 import { listarProductos, agregarNuevoProducto, eliminarProducto } from "../../redux/reducers/productos/productos.acciones"
+import { EstadoProducto } from '../../redux/reducers/productos/EstadoProducto';
 
 
 
-interface props {
-    productos: [],
-    listarProductos: (productos: []) => void
+interface Props {
+    productos: Array<Producto>,
+    listarProductos: (productos: Array<Producto>) => void
     agregarNuevoProducto: (productos: Producto) => void,
     eliminarProducto: (productos: Producto) => void
 }
 
-class ContenedorProductos extends React.Component<props, any> {
+class ContenedorProductos extends React.Component<Props, any> {
 
 
     componentDidMount() {
@@ -37,7 +38,7 @@ class ContenedorProductos extends React.Component<props, any> {
     }
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: EstadoProducto) => {
     const { productos } = state;
     return productos;
 };
