@@ -5,18 +5,19 @@ interface props {
     onClickCambiarPagina: (numeroPagina: number) => void
 }
 
+const PRODUCTOS_VISIBLES_POR_PAGINA = 10;
 export class PaginadorProductos extends React.Component<props, any> {
 
 
     render() {
         const { onClickCambiarPagina, cantidadTotalProductos } = this.props;
 
-        if (cantidadTotalProductos <= 10) {
+        if (cantidadTotalProductos <= PRODUCTOS_VISIBLES_POR_PAGINA) {
             return null;
         }
 
         const rango = [];
-        for (let i = 0; i < Math.ceil(cantidadTotalProductos / 10); ++i) {
+        for (let i = 0; i < Math.ceil(cantidadTotalProductos / PRODUCTOS_VISIBLES_POR_PAGINA); ++i) {
             rango.push(i);
         }
 
