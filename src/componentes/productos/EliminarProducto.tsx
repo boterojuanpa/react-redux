@@ -1,22 +1,21 @@
 import React from 'react'
 import { Producto } from './Producto';
 
-interface props {
+interface EliminarProductoProps {
     producto: Producto,
     onClickEliminarProducto: (productos: Producto) => void
 }
 
-export class EliminarProducto extends React.Component<props, any> {
+export const EliminarProducto: React.FC<EliminarProductoProps> = (props) => {
 
-    render(){
-        const {onClickEliminarProducto, producto} = this.props;
+    const { onClickEliminarProducto, producto } = props;
 
-        return(
-            <button onClick={()=>onClickEliminarProducto(producto)}>
-                X
-            </button>
+    return (
+        <button onClick={() => onClickEliminarProducto(producto)}>
+            X
+        </button>
 
-        );
-    }
+    );
+
 
 }

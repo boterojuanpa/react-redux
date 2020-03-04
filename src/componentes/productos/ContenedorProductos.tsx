@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ListaProductos } from './ListaProductos';
 import { AgregarProducto } from './AgregarProducto';
 import { Producto } from './Producto';
@@ -9,7 +9,7 @@ import { EstadoGeneral } from '../../redux/EstadoGeneral';
 
 
 
-interface Props {
+interface ContenedorProductosProps {
     productos: Array<Producto>,
     listarProductos: (numeroPagina: number) => void
     agregarNuevoProducto: (productos: Producto) => void,
@@ -17,26 +17,25 @@ interface Props {
     cantidadTotalProducto: number
 }
 
-class ContenedorProductos extends React.Component<Props, any> {
+const ContenedorProductos: React.FC<ContenedorProductosProps> = (props) => {
 
+    const { productos, cantidadTotalProducto, listarProductos } = props;
+    
+    useEffect(() => {
+        listarProductos(1);
+      }, [listarProductos]);
 
-    componentDidMount() {
-        this.props.listarProductos(1);
-    }
+    
 
-    render() {
-
-        const { productos, cantidadTotalProducto, listarProductos } = this.props;
-
-        return (
-            <React.Fragment>
-                <ListaProductos productos={productos} onClickEliminarProducto={this.props.eliminarProducto} />
-                <AgregarProducto onClickAgregarProducto={this.props.agregarNuevoProducto} />
-                <PaginadorProductos cantidadTotalProductos={cantidadTotalProducto} onClickCambiarPagina={listarProductos} />
-            </React.Fragment>
-        );
-    }
+    return (
+        <React.Fragment>
+            <ListaProductos productos={productos} onClickEliminarProducto={props.eliminarProducto} />
+            <AgregarProducto onClickAgregarProducto={props.agregarNuevoProducto} />
+            <PaginadorProductos cantidadTotalProductos={cantidadTotalProducto} onClickCambiarPagina={listarProductos} />
+        </React.Fragment>
+    );
 }
+
 
 const mapStateToProps = (state: EstadoGeneral) => {
     return state.productos;

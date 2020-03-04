@@ -1,33 +1,27 @@
 import React from 'react';
 import { Producto } from './Producto';
 
-
-export interface Props {
+export interface AgregarProductoProps {
     onClickAgregarProducto: (producto: Producto) => void;
 }
 
+export const AgregarProducto: React.FC<AgregarProductoProps> = (props) => {
 
-export class AgregarProducto extends React.Component<Props, any>  {
+    const onClicAgregarProducto = () => {
 
-    onClicAgregarProducto = ()=> {
-
-        this.props.onClickAgregarProducto({
+        props.onClickAgregarProducto({
             title: "nuevo",
             slug: "Juan Pablo Botero",
             body: "posting the article accessing using constant",
             createdAt: new Date(),
             updatedAt: new Date()
         })
-
     }
 
+    return (
+        <button onClick={onClicAgregarProducto}>
+            Agregar
+        </button>
+    );
 
-    render() {
-        return (
-            <button onClick={this.onClicAgregarProducto}>
-                Agregar
-            </button>
-
-        )
-    }
 }
