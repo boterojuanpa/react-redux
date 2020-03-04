@@ -1,14 +1,13 @@
 import React from 'react'
 
-class Home extends React.Component {
+export const Home: React.FC = () => {
 
-    render() {
-        return (
-            <div>
-                Bienvenidos este es el Home
-            </div>
+    return (
+        <div>
+            Bienvenidos este es el Home
+        </div>
 
-        );
-    }
+    );
+
 }
 export default Home;

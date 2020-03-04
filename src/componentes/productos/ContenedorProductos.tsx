@@ -3,8 +3,8 @@ import { ListaProductos } from './ListaProductos';
 import { AgregarProducto } from './AgregarProducto';
 import { useSelector, useDispatch } from "react-redux";
 import { agregarNuevoProducto, listarProductosAsync, eliminarProducto } from "../../redux/productos/productos.acciones"
-import { PaginadorProductos } from './PaginadorProductos';
 import { EstadoGeneral } from '../../redux/EstadoGeneral';
+import { PaginadorProductos } from './PaginadorProductos';
 
 const ContenedorProductos: React.FC = () => {
 

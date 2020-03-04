@@ -1,5 +1,5 @@
 import { LISTAR_PRODUCTOS, AGREGAR_PRODUCTO, ELIMINAR_PRODUCTO, TiposAccionesProducto } from "./productos.tipos-acciones";
-import { Producto } from "../../componentes/productos/Producto";
+import { Producto } from "../../componentes/productos/modelo/Producto";
 import { EstadoProducto } from "./EstadoProducto";
 
 const initialState: EstadoProducto = {

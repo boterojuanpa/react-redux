@@ -1,5 +1,5 @@
 import React from 'react'
-import { Producto } from './Producto';
+import { Producto } from './modelo/Producto';
 
 interface EliminarProductoProps {
     producto: Producto,
