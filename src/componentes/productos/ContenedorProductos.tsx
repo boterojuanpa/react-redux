@@ -1,51 +1,32 @@
 import React, { useEffect } from 'react';
 import { ListaProductos } from './ListaProductos';
 import { AgregarProducto } from './AgregarProducto';
-import { Producto } from './Producto';
-import { connect } from "react-redux";
-import { agregarNuevoProducto, eliminarProducto, listarProductosAsync } from "../../redux/productos/productos.acciones"
+import { useSelector, useDispatch } from "react-redux";
+import { agregarNuevoProducto, listarProductosAsync } from "../../redux/productos/productos.acciones"
 import { PaginadorProductos } from './PaginadorProductos';
 import { EstadoGeneral } from '../../redux/EstadoGeneral';
 
+const ContenedorProductos: React.FC = () => {
 
 
-interface ContenedorProductosProps {
-    productos: Array<Producto>,
-    listarProductos: (numeroPagina: number) => void
-    agregarNuevoProducto: (productos: Producto) => void,
-    eliminarProducto: (productos: Producto) => void,
-    cantidadTotalProducto: number
-}
+    const estadoProductos = useSelector((state: EstadoGeneral) => state.productos);
 
-const ContenedorProductos: React.FC<ContenedorProductosProps> = (props) => {
+    const dispatch = useDispatch()
 
-    const { productos, cantidadTotalProducto, listarProductos } = props;
-    
     useEffect(() => {
-        listarProductos(1);
-      }, [listarProductos]);
+        dispatch(listarProductosAsync(1));
+    }, [dispatch]);
 
-    
+
 
     return (
         <React.Fragment>
-            <ListaProductos productos={productos} onClickEliminarProducto={props.eliminarProducto} />
-            <AgregarProducto onClickAgregarProducto={props.agregarNuevoProducto} />
-            <PaginadorProductos cantidadTotalProductos={cantidadTotalProducto} onClickCambiarPagina={listarProductos} />
+            <ListaProductos productos={estadoProductos.productos} />
+            <AgregarProducto onClickAgregarProducto={(producto) => dispatch(agregarNuevoProducto(producto))} />
+            <PaginadorProductos cantidadTotalProductos={estadoProductos.cantidadTotalProducto} onClickCambiarPagina={(pagina) => dispatch(listarProductosAsync(pagina))} />
         </React.Fragment>
     );
 }
 
 
-const mapStateToProps = (state: EstadoGeneral) => {
-    return state.productos;
-};
-
-export default connect(
-    mapStateToProps,
-    {
-        listarProductos: listarProductosAsync,
-        agregarNuevoProducto: agregarNuevoProducto,
-        eliminarProducto: eliminarProducto
-    }
-)(ContenedorProductos);
+export default ContenedorProductos;
