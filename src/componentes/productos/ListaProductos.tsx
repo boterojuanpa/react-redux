@@ -11,7 +11,7 @@ export interface ListaProductosProps {
 export const ListaProductos: React.FC<ListaProductosProps> = (props) => {
 
     const { productos, onClickEliminarProducto } = props;
-    
+
     return (
         <table>
             <thead>

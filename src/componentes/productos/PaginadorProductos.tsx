@@ -6,6 +6,7 @@ interface PaginadorProductosProps {
 }
 
 const PRODUCTOS_VISIBLES_POR_PAGINA = 10;
+
 export const PaginadorProductos: React.FC<PaginadorProductosProps> = (props) => {
 
 
