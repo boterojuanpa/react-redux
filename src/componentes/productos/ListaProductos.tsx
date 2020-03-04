@@ -3,14 +3,15 @@ import { Producto } from './Producto';
 import { EliminarProducto } from "./EliminarProducto"
 
 export interface ListaProductosProps {
-    productos: Array<Producto>
+    productos: Array<Producto>,
+    onClickEliminarProducto: (productos: Producto) => void
 }
 
 
 export const ListaProductos: React.FC<ListaProductosProps> = (props) => {
 
-    const { productos } = props;
-
+    const { productos, onClickEliminarProducto } = props;
+    
     return (
         <table>
             <thead>
@@ -37,7 +38,7 @@ export const ListaProductos: React.FC<ListaProductosProps> = (props) => {
                                 {producto.createdAt + ""}
                             </td>
                             <td>
-                                <EliminarProducto producto={producto} ></EliminarProducto>
+                                <EliminarProducto producto={producto} onClickEliminarProducto={onClickEliminarProducto}></EliminarProducto>
                             </td>
                         </tr>
                     )

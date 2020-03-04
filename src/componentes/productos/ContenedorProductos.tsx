@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { ListaProductos } from './ListaProductos';
 import { AgregarProducto } from './AgregarProducto';
 import { useSelector, useDispatch } from "react-redux";
-import { agregarNuevoProducto, listarProductosAsync } from "../../redux/productos/productos.acciones"
+import { agregarNuevoProducto, listarProductosAsync, eliminarProducto } from "../../redux/productos/productos.acciones"
 import { PaginadorProductos } from './PaginadorProductos';
 import { EstadoGeneral } from '../../redux/EstadoGeneral';
 
@@ -21,7 +21,7 @@ const ContenedorProductos: React.FC = () => {
 
     return (
         <React.Fragment>
-            <ListaProductos productos={estadoProductos.productos} />
+            <ListaProductos productos={estadoProductos.productos} onClickEliminarProducto={(producto)=>dispatch(eliminarProducto(producto))}  />
             <AgregarProducto onClickAgregarProducto={(producto) => dispatch(agregarNuevoProducto(producto))} />
             <PaginadorProductos cantidadTotalProductos={estadoProductos.cantidadTotalProducto} onClickCambiarPagina={(pagina) => dispatch(listarProductosAsync(pagina))} />
         </React.Fragment>

@@ -1,19 +1,17 @@
 import React from 'react'
 import { Producto } from './Producto';
-import { eliminarProducto } from '../../redux/productos/productos.acciones';
-import { useDispatch } from 'react-redux';
 
 interface EliminarProductoProps {
-    producto: Producto    
+    producto: Producto,
+    onClickEliminarProducto: (productos: Producto) => void
 }
 
 export const EliminarProducto: React.FC<EliminarProductoProps> = (props) => {
 
-    const {  producto } = props;
-    const dispatch = useDispatch();
+    const { onClickEliminarProducto, producto } = props;
 
     return (
-        <button onClick={() =>  dispatch(eliminarProducto(producto))}>
+        <button onClick={() => onClickEliminarProducto(producto)}>
             X
         </button>
 
