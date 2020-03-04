@@ -25,7 +25,7 @@ export class PaginadorProductos extends React.Component<props, any> {
                     {
                         rango.map(index => {
                             return (
-                                <button
+                                <button data-testid={"boton-paginar" + index}
                                     onClick={() => onClickCambiarPagina(index)}
                                     key={index.toString()}>
                                         {index + 1}
