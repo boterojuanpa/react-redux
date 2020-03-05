@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 export const NavBar: React.FC = () => {
 
@@ -9,7 +9,7 @@ export const NavBar: React.FC = () => {
         <span> </span>
         <Link to="/productos" className="link">Productos</Link>
       </React.Fragment>
-  )
+  );
 
-}
+};
 

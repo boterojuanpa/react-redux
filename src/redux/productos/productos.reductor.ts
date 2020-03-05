@@ -3,9 +3,9 @@ import {
   ELIMINAR_PRODUCTO,
   LISTAR_PRODUCTOS,
   TiposAccionesProducto
-} from "./productos.tipos-acciones";
-import { Producto } from "../../componentes/productos/modelo/Producto";
-import { EstadoProducto } from "./EstadoProducto";
+} from './productos.tipos-acciones';
+import { EstadoProducto } from './EstadoProducto';
+import { Producto } from '../../componentes/productos/modelo/Producto';
 
 const initialState: EstadoProducto = {
   productos: Array<Producto>(),

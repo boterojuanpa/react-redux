@@ -3,9 +3,9 @@ import {
   ELIMINAR_PRODUCTO,
   LISTAR_PRODUCTOS,
   TiposAccionesProducto
-} from "./productos.tipos-acciones";
-import { Producto } from "../../componentes/productos/modelo/Producto";
-import { ProductoRepositorio } from "./productos.repositorio";
+} from './productos.tipos-acciones';
+import { Producto } from '../../componentes/productos/modelo/Producto';
+import { ProductoRepositorio } from './productos.repositorio';
 
 export function listarProductos(productos: Array<Producto>, cantidadTotalProducto: number): TiposAccionesProducto {
   return {
@@ -20,7 +20,7 @@ export function agregarNuevoProducto(producto: Producto): TiposAccionesProducto 
     type: AGREGAR_PRODUCTO,
     payload: producto
 
-  }
+  };
 }
 
 export function eliminarProducto(producto: Producto): TiposAccionesProducto {
@@ -28,7 +28,7 @@ export function eliminarProducto(producto: Producto): TiposAccionesProducto {
     type: ELIMINAR_PRODUCTO,
     payload: producto
 
-  }
+  };
 }
 
 export function listarProductosAsync(numeroPagina: number) {
@@ -36,5 +36,5 @@ export function listarProductosAsync(numeroPagina: number) {
     ProductoRepositorio.consultarPorPagina(numeroPagina).then((respuesta: any) =>
         dispacth(listarProductos(respuesta.data.articles, respuesta.data.articlesCount))
     );
-  }
+  };
 }

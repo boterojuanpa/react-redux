@@ -1,4 +1,4 @@
-import { EstadoProducto } from "./productos/EstadoProducto";
+import { EstadoProducto } from './productos/EstadoProducto';
 
 export interface EstadoGeneral {
   productos: EstadoProducto

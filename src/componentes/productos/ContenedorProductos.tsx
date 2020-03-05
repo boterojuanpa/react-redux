@@ -1,16 +1,17 @@
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { ListaProductos } from './ListaProductos';
-import { AgregarProducto } from './AgregarProducto';
-import { connect } from "react-redux";
 import {
   agregarNuevoProducto,
   eliminarProducto,
   listarProductosAsync
-} from "../../redux/productos/productos.acciones"
-import { PaginadorProductos } from './PaginadorProductos';
+} from '../../redux/productos/productos.acciones';
+import { AgregarProducto } from './AgregarProducto';
 import { EstadoGeneral } from '../../redux/EstadoGeneral';
+import { ListaProductos } from './ListaProductos';
+import { PaginadorProductos } from './PaginadorProductos';
 import { Producto } from './modelo/Producto';
-import * as PropTypes from 'prop-types'
+import { connect } from 'react-redux';
+
 
 interface Props {
   productos: Array<Producto>,

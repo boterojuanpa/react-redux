@@ -1,5 +1,5 @@
-import * as React from 'react'
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
 interface PaginadorProductosProps {
   cantidadTotalProductos: number,
@@ -17,17 +17,14 @@ export const PaginadorProductos: React.FC<PaginadorProductosProps> = (props) => 
     return null;
   }
 
-  const rango = [];
-  for (let i = 0; i < Math.ceil(cantidadTotalProductos / PRODUCTOS_VISIBLES_POR_PAGINA); ++i) {
-    rango.push(i);
-  }
+  const rango = Array.from(Array(Math.ceil(cantidadTotalProductos / PRODUCTOS_VISIBLES_POR_PAGINA)).keys());
 
   return (
       <nav>
         {
           rango.map(index => {
             return (
-                <button data-testid={"boton-paginar" + index}
+                <button data-testid={'boton-paginar' + index}
                         onClick={() => onClickCambiarPagina(index)}
                         key={index.toString()}>
                   {index + 1}
@@ -37,10 +34,10 @@ export const PaginadorProductos: React.FC<PaginadorProductosProps> = (props) => 
         }
       </nav>
   );
-}
+};
 
 PaginadorProductos.propTypes = {
   cantidadTotalProductos: PropTypes.number.isRequired,
   onClickCambiarPagina: PropTypes.func.isRequired,
-}
+};
 

@@ -1,9 +1,9 @@
-export class Producto {
+export interface Producto {
 
-  title!: string;
-  slug!: string;
-  body!: string;
-  createdAt!: Date;
-  updatedAt!: Date
+  title: string;
+  slug: string;
+  body: string;
+  createdAt: Date;
+  updatedAt: Date
 
 }

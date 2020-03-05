@@ -1,7 +1,7 @@
-import * as React from 'react'
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import { EliminarProducto } from './EliminarProducto';
 import { Producto } from './modelo/Producto';
-import { EliminarProducto } from "./EliminarProducto"
-import * as PropTypes from 'prop-types'
 
 export interface ListaProductosProps {
   productos: Array<Producto>,
@@ -35,23 +35,23 @@ export const ListaProductos: React.FC<ListaProductosProps> = (props) => {
                   {producto.title}
                 </td>
                 <td>
-                  {producto.createdAt + ""}
+                  {producto.createdAt + ''}
                 </td>
                 <td>
                   <EliminarProducto producto={producto}
                                     onClickEliminarProducto={onClickEliminarProducto}></EliminarProducto>
                 </td>
               </tr>
-          )
+          );
         })}
         </tbody>
       </table>
 
   );
 
-}
+};
 
 ListaProductos.propTypes = {
-  productos: PropTypes.arrayOf(PropTypes.instanceOf(Producto)).isRequired as PropTypes.Validator<Producto[]>,
+  productos: PropTypes.array.isRequired,
   onClickEliminarProducto: PropTypes.func.isRequired,
 };

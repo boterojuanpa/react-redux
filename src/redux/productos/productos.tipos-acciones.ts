@@ -1,8 +1,8 @@
-import { Producto } from "../../componentes/productos/modelo/Producto";
+import { Producto } from '../../componentes/productos/modelo/Producto';
 
-export const LISTAR_PRODUCTOS = "LISTAR_PRODUCTOS";
-export const AGREGAR_PRODUCTO = "AGREGAR_PRODUCTO";
-export const ELIMINAR_PRODUCTO = "ELIMINAR_PRODUCTO";
+export const LISTAR_PRODUCTOS = 'LISTAR_PRODUCTOS';
+export const AGREGAR_PRODUCTO = 'AGREGAR_PRODUCTO';
+export const ELIMINAR_PRODUCTO = 'ELIMINAR_PRODUCTO';
 
 
 interface AccionListarProductos {

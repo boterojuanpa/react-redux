@@ -1,11 +1,13 @@
+import './index.css';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from "react-redux";
-import store from './redux/store';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import App from './App';
+
+import { Provider } from 'react-redux';
+import store from './redux/store';
+
 
 ReactDOM.render(
     (

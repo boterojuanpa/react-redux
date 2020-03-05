@@ -1,6 +1,6 @@
-import * as React from 'react'
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import { Producto } from './modelo/Producto';
-import * as PropTypes from 'prop-types'
 
 interface EliminarProductoProps {
   producto: Producto,
@@ -20,6 +20,6 @@ export const EliminarProducto: React.FC<EliminarProductoProps> = (props) => {
 };
 
 EliminarProducto.propTypes = {
-  producto: PropTypes.instanceOf(Producto).isRequired,
+  producto: PropTypes.object.isRequired as PropTypes.Validator<Producto>,
   onClickEliminarProducto: PropTypes.func.isRequired,
 };

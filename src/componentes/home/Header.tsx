@@ -1,6 +1,6 @@
-import * as React from 'react'
-import { NavBar } from './NavBar';
 import './Header.css';
+import * as React from 'react';
+import { NavBar } from './NavBar';
 
 const Header: React.FC = () => {
 
@@ -17,5 +17,5 @@ const Header: React.FC = () => {
       </div>
 
   );
-}
+};
 export default Header;

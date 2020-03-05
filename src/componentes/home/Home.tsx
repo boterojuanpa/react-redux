@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 export const Home: React.FC = () => {
 
@@ -9,5 +9,5 @@ export const Home: React.FC = () => {
 
   );
 
-}
+};
 export default Home;
