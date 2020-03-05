@@ -3,8 +3,6 @@ import { Producto } from '../../../componentes/productos/modelo/Producto';
 import { agregarNuevoProducto } from '../../../redux/acciones/productos/productos.acciones';
 import reductorProductos from '../../../redux/reductores/productos.reductor';
 
-
-
 describe('Reductor productos', () => {
 
   it('debería agregar productos', () => {

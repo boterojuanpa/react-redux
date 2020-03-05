@@ -22,9 +22,9 @@ describe('PaginadorProductos Test', () => {
     componentWrapper = mount(<PaginadorProductos cantidadTotalProductos={20}
                                                  onClickCambiarPagina={() => {
                                                  }}/>);
-    expect(componentWrapper.find('[data-testid=\'boton-paginar0\']').text()).toBe('1');
-    expect(componentWrapper.find('[data-testid=\'boton-paginar1\']').text()).toBe('2');
-    expect(componentWrapper.find('[data-testid=\'boton-paginar2\']').exists()).toBeFalsy();
+    expect(componentWrapper.find('[data-testid="boton-paginar0"]').text()).toBe('1');
+    expect(componentWrapper.find('[data-testid="boton-paginar1"]').text()).toBe('2');
+    expect(componentWrapper.find('[data-testid="boton-paginar2"]').exists()).toBeFalsy();
 
   });
 
