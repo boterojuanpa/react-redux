@@ -1,4 +1,9 @@
-import { LISTAR_PRODUCTOS, AGREGAR_PRODUCTO, ELIMINAR_PRODUCTO, TiposAccionesProducto } from "./productos.tipos-acciones";
+import {
+  AGREGAR_PRODUCTO,
+  ELIMINAR_PRODUCTO,
+  LISTAR_PRODUCTOS,
+  TiposAccionesProducto
+} from "./productos.tipos-acciones";
 import { Producto } from "../../componentes/productos/modelo/Producto";
 import { EstadoProducto } from "./EstadoProducto";
 
@@ -10,7 +15,7 @@ const initialState: EstadoProducto = {
 export default function (state = initialState, action: TiposAccionesProducto): EstadoProducto {
   switch (action.type) {
     case LISTAR_PRODUCTOS: {
-      const  productos  = action.payload;
+      const productos = action.payload;
       return {
         ...state,
         productos: productos,
@@ -29,7 +34,7 @@ export default function (state = initialState, action: TiposAccionesProducto): E
       const producto = action.payload;
       return {
         ...state,
-        productos: [...state.productos.filter(p=> p.title !== producto.title)],
+        productos: [...state.productos.filter(p => p.title !== producto.title)],
       };
     }
 

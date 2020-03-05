@@ -10,14 +10,18 @@ interface AccionListarProductos {
   payload: Producto[]
   cantidadTotalProducto: number
 }
+
 interface AccionAgregarProducto {
   type: typeof AGREGAR_PRODUCTO
   payload: Producto
 }
 
 interface AccionEliminarProducto {
-    type: typeof ELIMINAR_PRODUCTO
-    payload: Producto
-  }
+  type: typeof ELIMINAR_PRODUCTO
+  payload: Producto
+}
 
-export type TiposAccionesProducto = AccionListarProductos | AccionAgregarProducto | AccionEliminarProducto
+export type TiposAccionesProducto =
+    AccionListarProductos
+    | AccionAgregarProducto
+    | AccionEliminarProducto
