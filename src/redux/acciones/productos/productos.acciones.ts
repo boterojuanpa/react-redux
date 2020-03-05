@@ -4,8 +4,8 @@ import {
   LISTAR_PRODUCTOS,
   TiposAccionesProducto
 } from './productos.tipos-acciones';
-import { Producto } from '../../componentes/productos/modelo/Producto';
-import { ProductoRepositorio } from './productos.repositorio';
+import { Producto } from '../../../componentes/productos/modelo/Producto';
+import { ProductoRepositorio } from '../../../api/productos.repositorio';
 
 export function listarProductos(productos: Array<Producto>, cantidadTotalProducto: number): TiposAccionesProducto {
   return {

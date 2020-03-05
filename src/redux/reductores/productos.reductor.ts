@@ -3,8 +3,8 @@ import {
   ELIMINAR_PRODUCTO,
   LISTAR_PRODUCTOS,
   TiposAccionesProducto
-} from './productos.tipos-acciones';
-import { EstadoProducto } from './EstadoProducto';
+} from '../acciones/productos/productos.tipos-acciones';
+import { EstadoProducto } from '../modelo/EstadoProducto';
 import { Producto } from '../../componentes/productos/modelo/Producto';
 
 const initialState: EstadoProducto = {

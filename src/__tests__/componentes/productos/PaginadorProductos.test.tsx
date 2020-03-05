@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { ReactWrapper, mount } from 'enzyme';
-import { PaginadorProductos } from '../../componentes/productos/PaginadorProductos';
+import { PaginadorProductos } from '../../../componentes/productos/PaginadorProductos';
 
-describe('PaginadorComponentes Test', () => {
+describe('PaginadorProductos Test', () => {
 
   let componentWrapper: ReactWrapper;
 
@@ -29,3 +29,5 @@ describe('PaginadorComponentes Test', () => {
   });
 
 });
+
+export {};
