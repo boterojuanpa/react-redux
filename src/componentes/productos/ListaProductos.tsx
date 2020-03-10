@@ -1,20 +1,19 @@
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import { EliminarProducto } from './EliminarProducto';
-import { Producto } from './modelo/Producto';
+import * as PropTypes from "prop-types";
+import * as React from "react";
+import { EliminarProducto } from "./EliminarProducto";
+import { Producto } from "./modelo/Producto";
 
 export interface ListaProductosProps {
-  productos: Array<Producto>,
-  onClickEliminarProducto: (productos: Producto) => void
+  productos: Array<Producto>;
+  onClickEliminarProducto: (productos: Producto) => void;
 }
 
-export const ListaProductos: React.FC<ListaProductosProps> = (props) => {
-
-  const {productos, onClickEliminarProducto} = props;
+export const ListaProductos: React.FC<ListaProductosProps> = props => {
+  const { productos, onClickEliminarProducto } = props;
 
   return (
-      <table>
-        <thead>
+    <table>
+      <thead>
         <tr>
           <td>
             <b>Título</b>
@@ -26,32 +25,28 @@ export const ListaProductos: React.FC<ListaProductosProps> = (props) => {
             <b>Eliminar</b>
           </td>
         </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
         {productos.map((producto: Producto) => {
           return (
-              <tr key={producto.slug}>
-                <td>
-                  {producto.title}
-                </td>
-                <td>
-                  {producto.createdAt + ''}
-                </td>
-                <td>
-                  <EliminarProducto producto={producto}
-                                    onClickEliminarProducto={onClickEliminarProducto}></EliminarProducto>
-                </td>
-              </tr>
+            <tr key={producto.slug}>
+              <td>{producto.title}</td>
+              <td>{producto.createdAt + ""}</td>
+              <td>
+                <EliminarProducto
+                  producto={producto}
+                  onClickEliminarProducto={onClickEliminarProducto}
+                ></EliminarProducto>
+              </td>
+            </tr>
           );
         })}
-        </tbody>
-      </table>
-
+      </tbody>
+    </table>
   );
-
 };
 
 ListaProductos.propTypes = {
   productos: PropTypes.array.isRequired,
-  onClickEliminarProducto: PropTypes.func.isRequired,
+  onClickEliminarProducto: PropTypes.func.isRequired
 };
